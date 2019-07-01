@@ -3,10 +3,12 @@
 		<title>Hello</title>
 	</head>
 	<body>
-		<h1>Blog 1</h1>
-		<p>Hello world!</p>
-
-		<h2>Blog 2</h2>
-		<p>lorem ipsum<p>
+		{% for post in posts %}
+			<div>
+				<h1>{{ post.title }}</h1>
+				<p>Publicado: {{ post.published_date }}</p>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
